@@ -1,4 +1,4 @@
-import { LogLevel } from '../types/LogLevel';
+import { LogLevel } from '../types/LogLevel.js';
 import chalk from 'chalk';
 
 export class Logger {

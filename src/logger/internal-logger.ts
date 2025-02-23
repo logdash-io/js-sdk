@@ -1,6 +1,6 @@
-import { Logger } from './Logger';
+import { Logger } from './Logger.js';
 import chalk from 'chalk';
-const pkgJson = require('../../package.json');
+import pkgJson from '../../package.json' with { type: 'json' };
 
 export const internalLogger = new Logger(console.log, () =>
 	chalk.magenta(`\n[LogDash@${pkgJson.version}]\n`),
