@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.1.1
+
+### Patch Changes
+
+- 4078824: fix: lizma
+
 ## 0.1.0
 
 ### Minor Changes
