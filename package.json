@@ -1,6 +1,7 @@
 {
     "name": "@logdash/core",
     "version": "0.0.1",
+    "private": false,
     "description": "Modern observability platform.",
     "scripts": {
         "build": "tsc -p tsconfig.lib.json",
