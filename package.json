@@ -41,5 +41,9 @@
         "logging",
         "tracing",
         "metrics"
-    ]
+    ],
+    "dependencies": {
+        "chalk": "^5.4.1",
+        "winston": "^3.17.0"
+    }
 }
