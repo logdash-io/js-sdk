@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.1.2
+
+### Patch Changes
+
+- 5e8f554: fix: imports
+
 ## 0.1.1
 
 ### Patch Changes
