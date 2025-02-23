@@ -1,3 +1,1 @@
-export const LogDash = () => {
-    console.log("Hello, LogDash!");
-};
+export { createLogDash } from './LogDash';
