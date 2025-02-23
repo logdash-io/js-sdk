@@ -1,5 +1,5 @@
-import { LogLevel } from '../types/LogLevel';
-import { LogSync } from './LogSync';
+import { LogLevel } from '../types/LogLevel.js';
+import { LogSync } from './LogSync.js';
 
 export class HttpLogSync implements LogSync {
 	constructor(private readonly API_KEY: string) {}
@@ -17,7 +17,7 @@ export class HttpLogSync implements LogSync {
 			},
 			body: JSON.stringify({
 				message,
-				verbocity: level,
+				level,
 				createdAt,
 			}),
 		});

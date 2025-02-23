@@ -1,5 +1,5 @@
-import { Logger } from './logger/Logger';
-import { createLogSync } from './sync/createLogSync';
+import { Logger } from './logger/Logger.js';
+import { createLogSync } from './sync/createLogSync.js';
 
 type InitializationParams = {
 	API_KEY?: string;

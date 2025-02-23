@@ -1,1 +1,1 @@
-export { createLogDash } from './LogDash';
+export { createLogDash } from './LogDash.js';
