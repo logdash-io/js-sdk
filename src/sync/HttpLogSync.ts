@@ -13,7 +13,7 @@ export class HttpLogSync implements LogSync {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: `Bearer ${this.API_KEY}`,
+				'project-api-key': this.API_KEY,
 			},
 			body: JSON.stringify({
 				message,
