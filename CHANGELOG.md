@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.2.0
+
+### Minor Changes
+
+- 76e2276: fix: chalk import bug
+
 ## 0.1.2
 
 ### Patch Changes
