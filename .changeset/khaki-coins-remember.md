@@ -1,5 +1,5 @@
 ---
-"@logdash/core": patch
+"@logdash/core": minor
 ---
 
 fix: remove module type
