@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.3.1
+
+### Patch Changes
+
+- d836249: chore: bump chalk
+
 ## 0.3.0
 
 ### Minor Changes
