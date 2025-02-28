@@ -1,5 +1,12 @@
 # @logdash/core
 
+## 0.3.2
+
+### Patch Changes
+
+- 6c1ec4f: chore: down chalk
+- a583af0: chore: up lf
+
 ## 0.3.1
 
 ### Patch Changes
