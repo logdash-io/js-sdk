@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.3.3
+
+### Patch Changes
+
+- 2adb433: fix: warn->warning
+
 ## 0.3.2
 
 ### Patch Changes
