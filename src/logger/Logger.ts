@@ -5,7 +5,7 @@ export class Logger {
 	constructor(
 		private readonly log = console.log,
 		private readonly prefix: (level: LogLevel) => string = (level) =>
-			`[${new Date().toString()}] (${String(level).toUpperCase()}): `,
+			`[${new Date().toISOString()}] (${String(level).toUpperCase()}): `,
 		private readonly onLog?: (level: LogLevel, message: string) => void,
 	) {}
 
