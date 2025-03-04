@@ -2,6 +2,8 @@ import { LogLevel } from '../types/LogLevel.js';
 import { LogSync } from './LogSync.js';
 
 export class HttpLogSync implements LogSync {
+	private sequenceNumber = 0;
+
 	constructor(private readonly API_KEY: string) {}
 
 	// todos:
@@ -19,6 +21,7 @@ export class HttpLogSync implements LogSync {
 				message,
 				level,
 				createdAt,
+				sequenceNumber: this.sequenceNumber++,
 			}),
 		});
 	}
