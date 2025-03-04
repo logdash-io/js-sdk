@@ -5,7 +5,7 @@ export class Logger {
 	constructor(
 		private readonly log = console.log,
 		private readonly prefix: (level: LogLevel) => string = (level) =>
-			`[LogDash] ${String(level).toUpperCase()}: `,
+			`[${new Date().toString()}] (${String(level).toUpperCase()}): `,
 		private readonly onLog?: (level: LogLevel, message: string) => void,
 	) {}
 
@@ -43,7 +43,7 @@ export class Logger {
 				{
 					[LogLevel.ERROR]: 'red',
 					[LogLevel.WARN]: 'yellow',
-					[LogLevel.INFO]: 'blueBright',
+					[LogLevel.INFO]: 'white',
 					[LogLevel.HTTP]: 'cyan',
 					[LogLevel.VERBOSE]: 'magenta',
 					[LogLevel.DEBUG]: 'green',
