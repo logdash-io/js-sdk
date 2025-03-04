@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.3.5
+
+### Patch Changes
+
+- 55d067f: export logger
+
 ## 0.3.4
 
 ### Patch Changes
