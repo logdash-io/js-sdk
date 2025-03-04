@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.3.6
+
+### Patch Changes
+
+- ce61576: fix date format
+
 ## 0.3.5
 
 ### Patch Changes
