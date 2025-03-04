@@ -2,4 +2,4 @@
 "@logdash/core": patch
 ---
 
-feat(): export logger
+export logger
