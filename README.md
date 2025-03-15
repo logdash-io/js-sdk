@@ -30,9 +30,9 @@ logger.warning('Low disk space warning');
 
 To see the logs, please enter your logdash dashboard
 
-![delta](docs/image-1.png)
+![delta](docs/delta.png)
 
-![logs](docs/image-2.png)
+![logs](docs/logs.png)
 
 # Configuration Options
 
