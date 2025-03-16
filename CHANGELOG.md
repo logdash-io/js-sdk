@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.3.8
+
+### Patch Changes
+
+- 8e69ab7: feat: add info method
+
 ## 0.3.7
 
 ### Patch Changes
