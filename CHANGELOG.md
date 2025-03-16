@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 0.3.7
+
+### Patch Changes
+
+- 62f0ae6: feat: improve contract
+
 ## 0.3.6
 
 ### Patch Changes
