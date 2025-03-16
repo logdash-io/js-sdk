@@ -18,7 +18,7 @@ npm install @logdash/core
 import { createLogDash } from '@logdash/core';
 
 const { logger } = createLogDash({
-	API_KEY: '<your-api-key>',
+	apiKey: '<your-api-key>',
 });
 
 logger.info('Application started successfully');
@@ -30,15 +30,14 @@ logger.warning('Low disk space warning');
 
 To see the logs, please enter your logdash dashboard
 
-![delta](docs/delta.png)
-
 ![logs](docs/logs.png)
+![delta](docs/delta.png)
 
 # Configuration
 
 | Parameter | Required | Default | Description                                                                                                              |
 | --------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------ |
-| apiKey    | no       | -       | Api key used to authorize against logdash servers. If you don't provide one, logs will be logged into local console only |
+| `apiKey`  | no       | -       | Api key used to authorize against logdash servers. If you don't provide one, logs will be logged into local console only |
 
 # License
 
