@@ -17,6 +17,10 @@ export class Logger {
 		this._log(LogLevel.WARN, message);
 	}
 
+	info(message: string) {
+		this._log(LogLevel.INFO, message);
+	}
+
 	log(message: string) {
 		this._log(LogLevel.INFO, message);
 	}
