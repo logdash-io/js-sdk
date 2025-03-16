@@ -5,8 +5,8 @@ import { NoopLogSync } from './NoopLogSync.js';
 
 export const createLogSync = (API_KEY?: string): LogSync => {
 	if (!API_KEY) {
-		internalLogger.info(
-			'API_KEY was not provided, using only local logger.\n',
+		internalLogger.log(
+			'Api key was not provided, using only local logger.\n',
 		);
 		return new NoopLogSync();
 	}

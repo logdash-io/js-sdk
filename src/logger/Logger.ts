@@ -3,7 +3,7 @@ import chalk from 'chalk';
 
 export class Logger {
 	constructor(
-		private readonly log = console.log,
+		private readonly logMethod = console.log,
 		private readonly prefix: (level: LogLevel) => string = (level) =>
 			`[${new Date().toISOString()}] (${String(level).toUpperCase()}): `,
 		private readonly onLog?: (level: LogLevel, message: string) => void,
@@ -17,7 +17,7 @@ export class Logger {
 		this._log(LogLevel.WARN, message);
 	}
 
-	info(message: string) {
+	log(message: string) {
 		this._log(LogLevel.INFO, message);
 	}
 
@@ -51,7 +51,7 @@ export class Logger {
 				}[level]
 			];
 		const formattedMessage = color(`${this.prefix(level)}${message}`);
-		this.log(formattedMessage);
+		this.logMethod(formattedMessage);
 		this.onLog?.(level, message);
 	}
 }
