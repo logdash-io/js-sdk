@@ -1,6 +1,6 @@
 {
     "name": "@logdash/core",
-    "version": "0.3.7",
+    "version": "0.3.8",
     "private": false,
     "description": "Modern observability platform.",
     "scripts": {
