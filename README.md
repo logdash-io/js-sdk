@@ -34,9 +34,11 @@ To see the logs, please enter your logdash dashboard
 
 ![logs](docs/logs.png)
 
-# Configuration Options
+# Configuration
 
-asd123
+| Parameter | Required | Default | Description                                                                                                              |
+| --------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------ |
+| apiKey    | no       | -       | Api key used to authorize against logdash servers. If you don't provide one, logs will be logged into local console only |
 
 # License
 

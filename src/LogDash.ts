@@ -2,7 +2,7 @@ import { Logger } from './logger/Logger.js';
 import { createLogSync } from './sync/createLogSync.js';
 
 type InitializationParams = {
-	API_KEY?: string;
+	apiKey?: string;
 };
 
 type Instance = {
@@ -12,7 +12,7 @@ type Instance = {
 };
 
 export const createLogDash = (params?: InitializationParams): Instance => {
-	const logSync = createLogSync(params?.API_KEY);
+	const logSync = createLogSync(params?.apiKey);
 
 	return {
 		// todo: make Logger params an object
