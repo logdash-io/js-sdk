@@ -5,7 +5,7 @@ export class Logger {
 	constructor(
 		private readonly logMethod = console.log,
 		private readonly prefix: (level: LogLevel) => string = (level) =>
-			`[${new Date().toISOString()}] (${String(level).toUpperCase()}): `,
+			`${String(level).toUpperCase()} `,
 		private readonly onLog?: (level: LogLevel, message: string) => void,
 	) {}
 
@@ -34,7 +34,7 @@ export class Logger {
 	}
 
 	debug(message: string) {
-		this._log(LogLevel.SILLY, message);
+		this._log(LogLevel.DEBUG, message);
 	}
 
 	silly(message: string) {
@@ -42,19 +42,27 @@ export class Logger {
 	}
 
 	private _log(level: LogLevel, message: string) {
-		const color =
-			chalk[
-				{
-					[LogLevel.ERROR]: 'red',
-					[LogLevel.WARN]: 'yellow',
-					[LogLevel.INFO]: 'white',
-					[LogLevel.HTTP]: 'cyan',
-					[LogLevel.VERBOSE]: 'magenta',
-					[LogLevel.DEBUG]: 'green',
-					[LogLevel.SILLY]: 'gray',
-				}[level]
-			];
-		const formattedMessage = color(`${this.prefix(level)}${message}`);
+		const color = {
+			[LogLevel.ERROR]: [231, 0, 11],
+			[LogLevel.WARN]: [254, 154, 0],
+			[LogLevel.INFO]: [21, 93, 252],
+			[LogLevel.HTTP]: [0, 166, 166],
+			[LogLevel.VERBOSE]: [0, 166, 0],
+			[LogLevel.DEBUG]: [0, 166, 62],
+			[LogLevel.SILLY]: [80, 80, 80],
+		}[level];
+
+		const datePrefix = chalk.rgb(
+			156,
+			156,
+			156,
+		)(`[${new Date().toISOString()}]`);
+		const prefix = chalk.rgb(
+			color[0],
+			color[1],
+			color[2],
+		)(`${this.prefix(level)}`);
+		const formattedMessage = `${datePrefix} ${prefix}${message}`;
 		this.logMethod(formattedMessage);
 		this.onLog?.(level, message);
 	}
