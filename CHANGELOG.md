@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.0
+
+### Major Changes
+
+- c4fdbc3: fix: pretty logs, fix docs typos, etc
+
 ## 0.3.8
 
 ### Patch Changes
