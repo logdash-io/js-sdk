@@ -1,10 +1,10 @@
-# logdash - node client
+# logdash - JS SDK
 
-Logdash is a simple yet powerful log aggregator and observability platform. This package is a client to use in your app to reach logdash servers.
+Logdash is a zero-config observability platform. This package serves an javascript interface to use it.
 
-# Get Started
+# Pre-requisites
 
-To use Logdash, you first need to sign up at [logdash.io](https://logdash.io/) and create an API key. It won't take more than 30 seconds.
+Setup your free project in less than 2 minutes at [logdash.io](https://logdash.io/).
 
 # Installation
 
@@ -23,12 +23,12 @@ const { logger } = createLogDash({
 
 logger.info('Application started successfully');
 logger.error('An unexpected error occurred');
-logger.warning('Low disk space warning');
+logger.warn('Low disk space warning');
 ```
 
 # View
 
-To see the logs, please enter your logdash dashboard
+To see the logs, go to your project dashboard
 
 ![logs](docs/logs.png)
 ![delta](docs/delta.png)
@@ -49,4 +49,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 # Support
 
-If you encounter any issues, please open an issue on GitHub or reach out to our support team.
+If you encounter any issues, please open an issue on GitHub or let us know at [contact@logdash.io](mailto:contact@logdash.io).
