@@ -1,5 +1,4 @@
 // npx ts-node test.ts
-
 import { createLogDash } from './dist/index';
 
 const { logger } = createLogDash();
