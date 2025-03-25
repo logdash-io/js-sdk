@@ -8,7 +8,7 @@ export enum MetricOperation {
 export class Metrics implements BaseMetrics {
 	constructor(private readonly apiKey: string) {}
 
-	set(key: string, value: number): void {
+	set(name: string, value: number): void {
 		fetch(`https://api.logdash.io/metrics`, {
 			method: 'POST',
 			headers: {
@@ -16,14 +16,14 @@ export class Metrics implements BaseMetrics {
 				'project-api-key': this.apiKey,
 			},
 			body: JSON.stringify({
-				key,
+				name,
 				value,
 				operation: MetricOperation.Set,
 			}),
 		});
 	}
 
-	change(key: string, value: number): void {
+	change(name: string, value: number): void {
 		fetch(`https://api.logdash.io/metrics`, {
 			method: 'POST',
 			headers: {
@@ -31,7 +31,7 @@ export class Metrics implements BaseMetrics {
 				'project-api-key': this.apiKey,
 			},
 			body: JSON.stringify({
-				key,
+				name,
 				value,
 				operation: MetricOperation.Change,
 			}),
