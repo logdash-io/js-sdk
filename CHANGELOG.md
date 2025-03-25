@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.3
+
+### Patch Changes
+
+- 05215d9: fix: fix dto
+
 ## 1.0.2
 
 ### Patch Changes
