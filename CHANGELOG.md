@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.2
+
+### Patch Changes
+
+- 16a8a5e: fix: add export
+
 ## 1.0.1
 
 ### Patch Changes
