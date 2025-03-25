@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.1
+
+### Patch Changes
+
+- 51b6213: feat: add metrics
+
 ## 1.0.0
 
 ### Major Changes
