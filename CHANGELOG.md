@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.4
+
+### Patch Changes
+
+- 6fa859b: feat: adjust contracts
+
 ## 1.0.3
 
 ### Patch Changes
