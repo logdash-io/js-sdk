@@ -10,7 +10,7 @@ export class Metrics implements BaseMetrics {
 
 	set(name: string, value: number): void {
 		fetch(`https://api.logdash.io/metrics`, {
-			method: 'POST',
+			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
 				'project-api-key': this.apiKey,
@@ -23,9 +23,9 @@ export class Metrics implements BaseMetrics {
 		});
 	}
 
-	change(name: string, value: number): void {
+	mutate(name: string, value: number): void {
 		fetch(`https://api.logdash.io/metrics`, {
-			method: 'POST',
+			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
 				'project-api-key': this.apiKey,
