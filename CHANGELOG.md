@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.5
+
+### Patch Changes
+
+- ce5af16: feat: add verbose metrics and host property
+
 ## 1.0.4
 
 ### Patch Changes
