@@ -1,3 +1,4 @@
+import { internalLogger } from '../logger/internal-logger';
 import { BaseMetrics } from './BaseMetrics';
 
 export enum MetricOperation {
@@ -6,10 +7,14 @@ export enum MetricOperation {
 }
 
 export class Metrics implements BaseMetrics {
-	constructor(private readonly apiKey: string) {}
+	constructor(
+		private readonly apiKey: string,
+		private readonly host: string,
+	) {}
 
 	set(name: string, value: number): void {
-		fetch(`https://api.logdash.io/metrics`, {
+		internalLogger.verbose(`Setting metric ${name} to ${value}`);
+		fetch(`${this.host}/metrics`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -24,7 +29,8 @@ export class Metrics implements BaseMetrics {
 	}
 
 	mutate(name: string, value: number): void {
-		fetch(`https://api.logdash.io/metrics`, {
+		internalLogger.verbose(`Mutating metric ${name} by ${value}`);
+		fetch(`${this.host}/metrics`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',

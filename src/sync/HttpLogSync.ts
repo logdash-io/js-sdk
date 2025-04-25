@@ -4,14 +4,17 @@ import { LogSync } from './LogSync.js';
 export class HttpLogSync implements LogSync {
 	private sequenceNumber = 0;
 
-	constructor(private readonly apiKey: string) {}
+	constructor(
+		private readonly apiKey: string,
+		private readonly host: string = 'https://api.logdash.io',
+	) {}
 
 	// todos:
 	// - queue
 	// - retry
 	// - batching
 	send(message: string, level: LogLevel, createdAt: string): void {
-		fetch(`https://api.logdash.io/logs`, {
+		fetch(`${this.host}/logs`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

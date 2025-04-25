@@ -5,6 +5,7 @@ import { createLogSync } from './sync/createLogSync.js';
 
 type InitializationParams = {
 	apiKey?: string;
+	host?: string;
 };
 
 type Instance = {
@@ -13,8 +14,8 @@ type Instance = {
 };
 
 export const createLogDash = (params?: InitializationParams): Instance => {
-	const logSync = createLogSync(params?.apiKey);
-	const metrics = createMetrics(params?.apiKey);
+	const logSync = createLogSync(params?.apiKey, params?.host);
+	const metrics = createMetrics(params?.apiKey, params?.host);
 
 	return {
 		// todo: make Logger params an object
