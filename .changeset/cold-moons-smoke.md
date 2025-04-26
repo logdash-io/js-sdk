@@ -1,5 +1,5 @@
 ---
-"logdash": patch
+'@logdash/js-sdk': patch
 ---
 
 feat: batch improvements
