@@ -1,6 +1,6 @@
 {
     "name": "@logdash/js-sdk",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "private": false,
     "description": "Modern observability platform.",
     "scripts": {
