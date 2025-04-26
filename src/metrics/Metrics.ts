@@ -14,6 +14,7 @@ export class Metrics implements BaseMetrics {
 		if (this.params.verbose) {
 			internalLogger.verbose(`Setting metric ${name} to ${value}`);
 		}
+
 		fetch(`${this.params.host}/metrics`, {
 			method: 'PUT',
 			headers: {
@@ -32,6 +33,7 @@ export class Metrics implements BaseMetrics {
 		if (this.params.verbose) {
 			internalLogger.verbose(`Mutating metric ${name} by ${value}`);
 		}
+
 		fetch(`${this.params.host}/metrics`, {
 			method: 'PUT',
 			headers: {
