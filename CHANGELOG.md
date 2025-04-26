@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.6
+
+### Patch Changes
+
+- 43c9f2b: feat: batch improvements
+
 ## 1.0.5
 
 ### Patch Changes
