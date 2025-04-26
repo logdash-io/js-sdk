@@ -1,4 +1,5 @@
 import { internalLogger } from '../logger/internal-logger';
+import { RequiredInitializationParams } from '../types/InitializationParams';
 import { BaseMetrics } from './BaseMetrics';
 
 export enum MetricOperation {
@@ -7,18 +8,17 @@ export enum MetricOperation {
 }
 
 export class Metrics implements BaseMetrics {
-	constructor(
-		private readonly apiKey: string,
-		private readonly host: string,
-	) {}
+	constructor(private readonly params: RequiredInitializationParams) {}
 
 	set(name: string, value: number): void {
-		internalLogger.verbose(`Setting metric ${name} to ${value}`);
-		fetch(`${this.host}/metrics`, {
+		if (this.params.verbose) {
+			internalLogger.verbose(`Setting metric ${name} to ${value}`);
+		}
+		fetch(`${this.params.host}/metrics`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
-				'project-api-key': this.apiKey,
+				'project-api-key': this.params.apiKey,
 			},
 			body: JSON.stringify({
 				name,
@@ -29,12 +29,14 @@ export class Metrics implements BaseMetrics {
 	}
 
 	mutate(name: string, value: number): void {
-		internalLogger.verbose(`Mutating metric ${name} by ${value}`);
-		fetch(`${this.host}/metrics`, {
+		if (this.params.verbose) {
+			internalLogger.verbose(`Mutating metric ${name} by ${value}`);
+		}
+		fetch(`${this.params.host}/metrics`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
-				'project-api-key': this.apiKey,
+				'project-api-key': this.params.apiKey,
 			},
 			body: JSON.stringify({
 				name,
