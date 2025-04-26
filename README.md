@@ -9,13 +9,13 @@ Setup your free project in less than 2 minutes at [logdash.io](https://logdash.i
 # Installation
 
 ```
-npm install @logdash/core
+npm install @logdash/js-sdk
 ```
 
 # Usage
 
 ```typescript
-import { createLogDash } from '@logdash/core';
+import { createLogDash } from '@logdash/js-sdk';
 
 const { logger } = createLogDash({
 	apiKey: '<your-api-key>',
