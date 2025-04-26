@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.8
+
+### Patch Changes
+
+- a9ece96: chore: update readme with metrics
+
 ## 1.0.7
 
 ### Patch Changes
