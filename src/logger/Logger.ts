@@ -1,6 +1,16 @@
 import { LogLevel } from '../types/LogLevel.js';
 import chalk from 'chalk';
 
+const LOG_LEVEL_COLORS: Record<LogLevel, [number, number, number]> = {
+	[LogLevel.ERROR]: [231, 0, 11],
+	[LogLevel.WARN]: [254, 154, 0],
+	[LogLevel.INFO]: [21, 93, 252],
+	[LogLevel.HTTP]: [0, 166, 166],
+	[LogLevel.VERBOSE]: [0, 166, 0],
+	[LogLevel.DEBUG]: [0, 166, 62],
+	[LogLevel.SILLY]: [80, 80, 80],
+};
+
 export class Logger {
 	constructor(
 		private readonly logMethod = console.log,
@@ -9,48 +19,40 @@ export class Logger {
 		private readonly onLog?: (level: LogLevel, message: string) => void,
 	) {}
 
-	error(message: string) {
-		this._log(LogLevel.ERROR, message);
+	error(...data: any[]): void {
+		this._log(LogLevel.ERROR, data.join(' '));
 	}
 
-	warn(message: string) {
-		this._log(LogLevel.WARN, message);
+	warn(...data: any[]): void {
+		this._log(LogLevel.WARN, data.join(' '));
 	}
 
-	info(message: string) {
-		this._log(LogLevel.INFO, message);
+	info(...data: any[]): void {
+		this._log(LogLevel.INFO, data.join(' '));
 	}
 
-	log(message: string) {
-		this._log(LogLevel.INFO, message);
+	log(...data: any[]): void {
+		this._log(LogLevel.INFO, data.join(' '));
 	}
 
-	http(message: string) {
-		this._log(LogLevel.HTTP, message);
+	http(...data: any[]): void {
+		this._log(LogLevel.HTTP, data.join(' '));
 	}
 
-	verbose(message: string) {
-		this._log(LogLevel.VERBOSE, message);
+	verbose(...data: any[]): void {
+		this._log(LogLevel.VERBOSE, data.join(' '));
 	}
 
-	debug(message: string) {
-		this._log(LogLevel.DEBUG, message);
+	debug(...data: any[]): void {
+		this._log(LogLevel.DEBUG, data.join(' '));
 	}
 
-	silly(message: string) {
-		this._log(LogLevel.SILLY, message);
+	silly(...data: any[]): void {
+		this._log(LogLevel.SILLY, data.join(' '));
 	}
 
-	private _log(level: LogLevel, message: string) {
-		const color = {
-			[LogLevel.ERROR]: [231, 0, 11],
-			[LogLevel.WARN]: [254, 154, 0],
-			[LogLevel.INFO]: [21, 93, 252],
-			[LogLevel.HTTP]: [0, 166, 166],
-			[LogLevel.VERBOSE]: [0, 166, 0],
-			[LogLevel.DEBUG]: [0, 166, 62],
-			[LogLevel.SILLY]: [80, 80, 80],
-		}[level];
+	private _log(level: LogLevel, message: string): void {
+		const color = LOG_LEVEL_COLORS[level];
 
 		const datePrefix = chalk.rgb(
 			156,
@@ -63,6 +65,7 @@ export class Logger {
 			color[2],
 		)(`${this.prefix(level)}`);
 		const formattedMessage = `${datePrefix} ${prefix}${message}`;
+
 		this.logMethod(formattedMessage);
 		this.onLog?.(level, message);
 	}
