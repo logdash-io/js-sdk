@@ -1,5 +1,11 @@
 # @logdash/core
 
+## 1.0.9
+
+### Patch Changes
+
+- 6d8dc70: feat: stringify json arguments
+
 ## 1.0.8
 
 ### Patch Changes
